@@ -1,0 +1,6 @@
+# Dependencias de la app de Streamlit (streamlit_app.py)
+streamlit>=1.40
+librosa>=0.10
+numpy
+matplotlib
+huggingface_hub
