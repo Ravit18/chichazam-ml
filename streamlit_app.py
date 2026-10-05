@@ -63,7 +63,8 @@ def detect(audio_bytes: bytes, suffix: str) -> list[dict]:
         os.unlink(tmp_path)
 
     with lock:
-        return identify(conn, hashes_query, top_k=5, min_score=5)
+        # max_hash_freq: sin el, los hashes muy repetidos hacen que la consulta tarde mas de un minuto con 318 canciones
+        return identify(conn, hashes_query, top_k=5, min_score=5, max_hash_freq=2000)
 
 
 # === UI ===
